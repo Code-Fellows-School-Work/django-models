@@ -7,7 +7,13 @@
 </head>
 <body>
     {% block content %}
-
+    <header class="bg-green-300 px-2 py-8">
+        <nav class="flex space-x-4 items-center">
+          <a class="text-4xl" href="{% url 'thing_list' %}">Things Rater</a>
+          <a href="somesite.com">Some site</a>
+          <a href="othersite.com">Other site</a>
+        </nav>
+      </header>
     {% endblock content %}
 </body>
 </html>
