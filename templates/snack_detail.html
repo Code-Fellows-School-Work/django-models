@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Snacks Details</h2>
-
-
-    <p>
-      {{snack.name}}
-  </p>
-    <p>{{snack.purchaser}}</p>
-    <p>{{snack.description}}</p>
-
-
-  {% endblock content %}
-</ul>
+<div class="max-w-4xl mx-auto py-8 px-4">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Snacks Details</h1>
+    <div class="mb-6 p-4 bg-white shadow-md rounded-lg">
+        <h2 class="text-xl font-semibold text-gray-700">{{ snack.name }}</h2>
+        <p class="mt-2 text-gray-600">Purchaser: {{ snack.purchaser }}</p>
+        <p class="text-gray-600">{{ snack.description }}</p>
+    </div>
+</div>
+{% endblock content %}

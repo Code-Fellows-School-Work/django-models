@@ -1,8 +1,6 @@
 from django.views.generic import TemplateView, ListView, DetailView
+from django.shortcuts import render
 from .models import Snack
-
-class HomePageView(TemplateView):
-    template_name = 'home.html'
 
 class AboutPageView(TemplateView):
     template_name = 'about.html'
@@ -15,3 +13,9 @@ class SnackListView(ListView):
 class SnackDetailView(DetailView):
     template_name = 'snack_detail.html'
     model = Snack
+
+def about_me(request):
+    context = {
+        'image_url': '.assets/PXL_20230816_231329155.MP.jpg',
+    }
+    return render(request, 'about_me.html', context)

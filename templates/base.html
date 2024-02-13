@@ -1,20 +1,25 @@
-{% load compress %}
-{% load static %}
+{% load compress %} {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snacks</title>
     {% compress css %}
-    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    <link rel="stylesheet" href="{% static 'src/output.css' %}" />
     {% endcompress %}
-</head>
-<body class = "bg-slate-400">
-
-    {% block content %}
-    child template goes here
+  </head>
+  <body class="bg-slate-400">
+    <nav class="bg-gray-800 p-4 flex justify-center">
+      <!-- this django naming convention allows the url link to be retrieved from urls.py -->
+      <div class="text-white space-x-4">
+          <a href ="{% url 'snack_list' %}" class="hover:text-gray-300">Home</a>
+          <a href ="{% url 'about' %}" class="hover:text-gray-300">About</a>
+      </div>
+    </nav>
+    {% block content %} 
+    child template goes here 
     {% endblock content %}
-</body>
+  </body>
 </html>
